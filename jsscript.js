@@ -1,3 +1,5 @@
+// Initialize the variables and counters
+
 playerScore = 0;
 computerScore = 0;
 
@@ -9,11 +11,13 @@ const selections = document.getElementById('buttons');
 const playerChoice = document.getElementById('playerchoice');
 const computerChoice = document.getElementById('computerchoice');
 
+//Function initializing set-up:
 function myFunction() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
 }
 
+//Code checking the clicks of the item:
 rock.onclick = () => {
   playerselects = 'rock';
   computerPlay();
@@ -34,12 +38,12 @@ scissors.onclick = () => {
   playRound(playerselects, computerselects);
   return 'scissors';
 }
-
+//Computers choice:
 const computerPlay = () => {
   let playOptions = ['rock', 'paper', 'scissors'];
   return computerselects = playOptions[Math.floor(Math.random() * playOptions.length)];           
 }
-
+//checks the score and choice:
 const playRound = (playerselects, computerselects) => {
 
   if ((playerselects === 'rock' && computerselects === 'scissors') ||
@@ -53,7 +57,7 @@ const playRound = (playerselects, computerselects) => {
   } 
   keepScore();
 }
-
+//maintains the score:
 const keepScore = () => {
   document.getElementById('playerscore').textContent = playerScore;
   document.getElementById('computerscore').textContent = computerScore;
